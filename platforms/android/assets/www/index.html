@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html ng-app="loppu">
+    <head>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com http://api.openweathermap.org 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Lopputyo</title>
+        <meta charset="UTF-8">
+
+        <link rel="stylesheet" href="css/angular-material.min.css">
+        <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="css/icons.css">
+        <link rel="stylesheet" href="css/owfont-regular.css" type="text/css">
+        <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+        <link rel="stylesheet" href="css/style.css">
+
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-animate.min.js"></script>
+        <script src="js/angular-aria.min.js"></script>
+        <script src="js/angular-messages.min.js"></script>
+        <script src="js/angular-material.min.js"></script>
+
+        <script src="js/app.js"></script>
+        <script src="js/liput.json"></script>
+        <script src="cordova.js"></script>
+    </head>
+    <body ng-controller="loppuCtrl" data-ng-init="saaGps()">
+
+
+<div ng-cloak>
+<md-content class="md-padding">
+
+  <md-toolbar class="md-hue-2"style="margin-bottom:0; padding-bottom:0;margin-top:0; padding-top:0;">
+       <div class="md-toolbar-tools">
+         <md-button ng-click="sammuta()" class="btn btn primary">Sulje
+         </md-button>
+       </div>
+       </md-toolbar>
+
+ <h1 class="sm-display-2" style="margin-bottom:0; padding-bottom:0;">Sää</h1>
+      <md-content class="md-padding">
+
+        <p>Hae kaupungin nimellä:</p>
+        <md-input-container style="width:80%">
+          <input ng-model="kaupunki" placeholder="Kaupunki"></input>
+        </md-input-container>
+        <md-button class="md-accent md-raised" style="width:90%" ng-click="saaZip()">Katso sää</md-button>
+          <p>Hae tämän hetkisen sijaintisi sää:</p>
+        <md-button class="md-accent md-raised" style="width:90%" ng-click="saaGps()">Hae Gps:llä</md-button>
+
+      </md-content>
+
+      <md-content class="md-padding">
+        <md-toolbar layout="row" class="md-hue-2">
+          <div class="md-toolbar-tools">
+            <span ng-bind="nimi"></span><span style="padding:5px" ng-bind="maa"></span><span style="padding:5px"  ng-bind="pvm"></span><span style="padding:5px"  ng-bind="aika"></span>
+          </div>
+        </md-toolbar>
+
+        <md-list style="background-color:lightgrey">
+              <md-list-item class="sm-2-line">
+                  <div class="sm-list-item-text">
+                    <span ng-bind="lampo"></span>
+                  </div>
+                <md-divider></md-divider>
+              </md-list-item>
+
+              <md-list-item class="sm-2-line">
+                  <div class="md-list-item-text">
+                    <span ng-bind="tuuli"></span>
+                  </div>
+                <md-divider></md-divider>
+              </md-list-item>
+
+              <md-list-item class="sm-2-line">
+                  <div class="sm-list-item-text">
+                    <span ng-bind="pilvet"></span>
+                  </div>
+                <md-divider></md-divider>
+              </md-list-item>
+
+              <md-list-item class="sm-2-line">
+                  <div class="sm-list-item-text">
+                    <span class="kuvaus" ng-bind="kuvaus"></span><i ng-class="ikoni"></i>
+                  </div>
+                <md-divider></md-divider>
+              </md-list-item>
+            </md-list>
+      </md-content>
+
+
+</md-content>
+</div>
+
+
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>

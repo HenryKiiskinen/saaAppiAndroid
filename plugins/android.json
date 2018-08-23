@@ -1,0 +1,25 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "lopputyo.mamk.fi.henry"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "lopputyo.mamk.fi.henry"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "lopputyo.mamk.fi.henry"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "lopputyo.mamk.fi.henry"
+        }
+    }
+}
